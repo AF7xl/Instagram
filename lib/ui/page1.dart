@@ -25,15 +25,21 @@ class _page1State extends State<page1> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title:
-            SizedBox(width: 280.w, height: 35.h, child: CupertinoSearchTextField(controller: search,)),
+        title: SizedBox(
+            width: 280.w,
+            height: 35.h,
+            child: CupertinoSearchTextField(
+              controller: search,
+            )),
         actions: [
           Padding(
             padding: EdgeInsets.only(left: 25.w),
             child: GestureDetector(
               onTap: () {
-                BlocProvider.of<InstaBloc>(context).add(FetchInsta(search: search.text));
-                BlocProvider.of<PostBloc>(context).add(Fetchpost(search: search.text));
+                BlocProvider.of<InstaBloc>(context)
+                    .add(FetchInsta(search: search.text));
+                BlocProvider.of<PostBloc>(context)
+                    .add(Fetchpost(search: search.text));
               },
               child: Icon(
                 CupertinoIcons.search_circle_fill,
@@ -78,7 +84,8 @@ class _page1State extends State<page1> {
                           Row(
                             children: [
                               Padding(
-                                padding: EdgeInsets.only(top: 30.h, left: 130.w),
+                                padding:
+                                    EdgeInsets.only(top: 30.h, left: 130.w),
                                 child: Icon(
                                   Icons.lock,
                                   color: Colors.black,
@@ -98,7 +105,8 @@ class _page1State extends State<page1> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(top: 30.h, left: 100.w),
+                                padding:
+                                    EdgeInsets.only(top: 30.h, left: 100.w),
                                 child: Icon(
                                   Icons.dehaze_outlined,
                                   color: Colors.black,
@@ -127,8 +135,8 @@ class _page1State extends State<page1> {
                                               .toString())),
                                     ),
                                     Padding(
-                                      padding:
-                                          EdgeInsets.only(top: 35.h, left: 35.w),
+                                      padding: EdgeInsets.only(
+                                          top: 35.h, left: 35.w),
                                       child: Column(
                                         children: [
                                           Text(
@@ -155,8 +163,8 @@ class _page1State extends State<page1> {
                                       ),
                                     ),
                                     Padding(
-                                      padding:
-                                          EdgeInsets.only(top: 36.5.h, left: 20.w),
+                                      padding: EdgeInsets.only(
+                                          top: 36.5.h, left: 20.w),
                                       child: Column(
                                         children: [
                                           Text(
@@ -185,9 +193,8 @@ class _page1State extends State<page1> {
                                       ),
                                     ),
                                     Padding(
-                                      padding:
-                                          EdgeInsets.only(top: 36.5.h, left: 20.w
-                                          ),
+                                      padding: EdgeInsets.only(
+                                          top: 36.5.h, left: 20.w),
                                       child: Column(
                                         children: [
                                           Text(
@@ -231,8 +238,7 @@ class _page1State extends State<page1> {
                                 Padding(
                                   padding: EdgeInsets.only(top: 125.h),
                                   child: SizedBox(
-                                      width: 343.w
-                                      ,
+                                      width: 343.w,
                                       child: Text(
                                           data.data!.biography.toString())),
                                 )
@@ -264,8 +270,7 @@ class _page1State extends State<page1> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.only(right: 10.w
-                                , top: 20.h),
+                            padding: EdgeInsets.only(right: 10.w, top: 20.h),
                             child: SingleChildScrollView(
                               scrollDirection: Axis.vertical,
                               child: Row(
@@ -279,8 +284,7 @@ class _page1State extends State<page1> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.only(left: 15.w
-                                    ),
+                                    padding: EdgeInsets.only(left: 15.w),
                                     child: CircleAvatar(
                                       radius: 35.r,
                                       backgroundImage: NetworkImage(
@@ -369,9 +373,12 @@ class _page1State extends State<page1> {
                             (index) {
                               return Container(
                                 color: Colors.white,
-                                child: Image.network(post.data!.items![index]
-                                    .imageVersions!.items![0].url
-                                    .toString(),fit: BoxFit.cover,),
+                                child: Image.network(
+                                  post.data!.items![index].imageVersions!
+                                      .items![0].url
+                                      .toString(),
+                                  fit: BoxFit.cover,
+                                ),
                               );
                             },
                           ),
